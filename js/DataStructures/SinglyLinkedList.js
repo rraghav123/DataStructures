@@ -187,15 +187,35 @@ class SinglyLinkedList {
     }
     return this;
   }
+
+  addTwoNumbers(l1, l2) {
+    let ptr1 =l1;
+    let ptr2 = l2;
+    let sum = [];
+    while(ptr1 || ptr2) {
+      if(ptr1.val && ptr2.val) {
+        sum.push(l1.val + l2.val);
+        ptr1 = ptr1.next;
+        ptr2 = ptr2.next;
+      } else if(l1.val) {
+        sum.push(l1.val)
+        ptr1 = ptr1.next;
+      } else if(l2.val) {
+        sum.push(l2.val)
+        ptr2 = ptr2.next;
+      }
+    }
+    return sum;
+  };
 }
 
 
-var list = new SinglyLinkedList();
-
-list.push(10);
-list.push(23);
-list.push(33);
-list.push(44);
+// var list = new SinglyLinkedList();
+//
+// list.push(10);
+// list.push(23);
+// list.push(33);
+// list.push(44);
 
 
 // var first = new Node('Hi')
